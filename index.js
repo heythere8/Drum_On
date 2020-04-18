@@ -9,6 +9,7 @@ document.querySelectorAll("button")[i].addEventListener("click",function(){
 document.addEventListener("keypress",function(event){sound(event.key);
   animation(event.key);});
 
+
 function sound(key)
 {
 switch (key)
@@ -48,7 +49,9 @@ switch (key)
   default:console.log(this.innerHTML);
 }
 }
+
 function animation(vaule){
 document.querySelector("."+ vaule).classList.add("pressed");
-setTimeout(function(){document.querySelector("."+ vaule).classList.remove("pressed");}, 120);
+setTimeout(function(){document.querySelector("."+ vaule).classList.remove("pressed");}, 100);
 }
+
