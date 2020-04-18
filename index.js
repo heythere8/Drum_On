@@ -2,10 +2,12 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
 
 document.querySelectorAll("button")[i].addEventListener("click",function(){
   sound(this.innerHTML);
+  animation(this.innerHTML);
 });
 }
 
-document.addEventListener("keypress",function(event){sound(event.key);});
+document.addEventListener("keypress",function(event){sound(event.key);
+  animation(event.key);});
 
 function sound(key)
 {
@@ -45,4 +47,8 @@ switch (key)
 
   default:console.log(this.innerHTML);
 }
+}
+function animation(vaule){
+document.querySelector("."+ vaule).classList.add("pressed");
+setTimeout(function(){document.querySelector("."+ vaule).classList.remove("pressed");}, 120);
 }
